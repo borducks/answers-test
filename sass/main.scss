@@ -1,0 +1,140 @@
+// frameworks
+@import "compass";
+@import "bourbon/bourbon"; // css3 mixins
+@import "neat/neat"; // semantic minimal grid
+
+
+// sass libraries 
+@import "libs/normalize"; 
+// @import "libs/animate"; //big lib add if needed
+
+
+// partials
+@import "partials/grid";  // for grid params
+@import "partials/mixins"; // for custom mixins
+@import "partials/font";  // type set up { @font-face }
+
+// global variables and defaults go here  
+@import "partials/app";
+
+// site elements add more as site grows in complexity
+@import "elements/header";
+@import "elements/sidebar";
+@import "elements/footer";
+
+html {
+	font-size: .8em;
+
+	body {
+		padding: 4em;
+	}
+}
+
+.container {
+	@include outer-container;
+	@include clearfix;
+}
+
+a.cancel {
+	@include button( shiny, #eee );
+}
+
+a.save {
+	@include button( shiny, #0e0 );
+}
+
+a.edit {
+	@include button( shiny, orange );
+}
+
+a.close {
+	@include button( shiny, #e00 );
+}
+
+a.delete {
+	@include button( shiny, #e00 );
+}
+
+
+// Calendar display
+.fc-month{
+}
+
+.fc-day {
+}
+
+.fc-widget-content {
+}
+
+#{$all-text-inputs} { 
+	border: 1px solid #ddd; 
+	padding: .25em;
+	font-size: .8em;
+}
+
+#{$all-text-inputs-focus} { background: #efe; }
+
+.event-entry-box {
+	border: 2px solid #ccc;
+	position:absolute;
+	top: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+	padding: .5em;
+	width: 22em;
+	z-index: 9999;
+
+	input[type=text] {
+		display: block;
+		width: 100%;
+		margin-bottom: .5em; 
+	}
+
+	a {
+		font-size: 1em;
+		padding: 5px;
+	}
+
+	.arrow {
+		@include triangle( 20px, white, down );
+		position: absolute;
+		bottom: -20px;
+		left: 10em;
+	}
+}
+
+.event-details-box {
+	display: none;
+	@extend .event-entry-box;
+	width: 14em;
+
+	h4 {
+		border-bottom: 1px solid #ccc;
+		margin: 0;
+	}
+
+	.arrow {
+		left: 6em;
+	}
+
+	.close {
+		@include button( simple , #ff0000 );
+		padding: 2px 4px;
+		padding-bottom: 0;
+		font-size: .8em;
+		position: absolute;
+		top: 4px;
+		left: 4px;
+	}
+
+	p {
+		font-size: .8em;
+	}
+}
+
+.debug {
+	font-family: $monospace;
+	border-top: 1px solid #090;
+	padding: 1em;
+}
