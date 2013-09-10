@@ -85,11 +85,13 @@ function main (event) {
 
 			// assign click handler parameters for the action buttons
 			$('.event-details-box a.delete').off('click').on('click', function(e) {
+				e.preventDefault();
 				if (confirm("Really delete this event???")) {
 					deleteEvent(event.id);
 				};
 			});
 			$('.event-details-box a.edit').off('click').on('click', function(e) {
+				e.preventDefault();
 				editEvent(event);
 			});
 		};
@@ -160,7 +162,7 @@ function main (event) {
 		$('.event-entry-box').css({left: xoffset+'px'});
 
 		$('.event-entry-box').slideDown(100).find('input').eq(0).focus();
-
+		$('.event-entry-title-date').text($.fullCalendar.formatDate(event_obj.start, 'MMMM d, yyyy'));
 
 		// fill in the event add form and display
 		$('.event-entry-box input[name=title]').val(event_obj.title);
