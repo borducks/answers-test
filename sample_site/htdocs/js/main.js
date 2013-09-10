@@ -174,6 +174,7 @@ function main (event) {
 
 
 	function getEvents () {
+		$('.loading').fadeIn();
 		// return all events via ajax and update calendar data source. rerenders, too
 		$.getJSON("/event/ajaxgetall", function(data) {
 			if (data) {
@@ -186,6 +187,7 @@ function main (event) {
 			} else {
 				console.log('no events found');
 			}
+			$('.loading').fadeOut();
 		});
 	}
 

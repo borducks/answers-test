@@ -254,4 +254,7 @@ input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:fo
 .event-details-box p { font-size: .8em; }
 
 /* line 136, ../../../sass/main.scss */
+.loading { width: 40px; height: 40px; background: url("/img/loading.gif") center center no-repeat; position: absolute; top: 0; left: 0; border: 2px solid #ccc; padding: 30px; box-shadow: 0 0 5px #999999; background-color: white; display: none; }
+
+/* line 150, ../../../sass/main.scss */
 .debug { font-family: "Bitstream Vera Sans Mono", Consolas, Courier, monospace; border-top: 1px solid #090; padding: 1em; }

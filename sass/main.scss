@@ -133,6 +133,20 @@ a.delete {
 	}
 }
 
+.loading {
+	width: 40px;
+	height: 40px;
+	background: url('/img/loading.gif') center center no-repeat;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border: 2px solid #ccc;
+	padding: 30px;
+	@include box-shadow(0 0 5px #999);
+	background-color: white;
+	display: none;
+}
+
 .debug {
 	font-family: $monospace;
 	border-top: 1px solid #090;

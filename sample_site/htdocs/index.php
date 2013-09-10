@@ -19,6 +19,7 @@ require "../../autoload.php"; // makes ure this points to where you put crossbar
 // to be used by models within the application
 // ------------------------------------------------------------------
 
+/*
 mysql::database_config(
 		'main',			// alias
 		'localhost',	// host
@@ -26,7 +27,15 @@ mysql::database_config(
 		'dbuser',		// username
 		'dbuser'		// password
 		);
+*/
 
+mysql::database_config(
+		'main',			// alias
+		'thetest.borducks.com',	// host
+		'borducks_answerstest',		// database
+		'borducks_answers',		// username
+		'answers123'		// password
+		);
 
 // ------------------------------------------------------------------
 // Create our framework object. 

@@ -31,14 +31,14 @@ class events
 	{
 		// add an event to the db
 
-		$title = mysql_real_escape_string($event_obj['title']);
+		$title = mysql_escape_string($event_obj['title']);
 		$start = strtotime($event_obj['start']);
 		$end = strtotime($event_obj['end']);
 		if (! $end) {
 			// if empty end, set to start
 			$end = $start;
 		}
-		$description = mysql_real_escape_string($event_obj['description']);
+		$description = mysql_escape_string($event_obj['description']);
 		$user_id = $event_obj['user_id'];
 		if ($event_id = $event_obj['id']) {
 			// if id passed in, update. otherwise create new event
